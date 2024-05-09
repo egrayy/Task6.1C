@@ -29,13 +29,13 @@ pipeline {
             post {
                 success {
                     // Send email notification on success
-                    mail to body: "Unit and Integration Tests passed successfully.",
+                    emailext body: "Unit and Integration Tests passed successfully.",
                              subject: "Unit and Integration Tests Success",
                              to: "emmagrayy@gmail.com"
                 }
                 failure {
                     // Send email notification on failure
-                    mail to body: "Unit and Integration Tests failed. Please check the logs.",
+                    emailext body: "Unit and Integration Tests failed. Please check the logs.",
                              subject: "Unit and Integration Tests Failure",
                              to: "emmagrayy@gmail.com"
                 }
@@ -61,13 +61,13 @@ pipeline {
             post {
                 success {
                     // Send email notification on success
-                    mail to body: "Security Scan passed successfully.",
+                    emailext body: "Security Scan passed successfully.",
                              subject: "Security Scan Success",
                              to: "emmagrayy@gmail.com"
                 }
                 failure {
                     // Send email notification on failure
-                    mail to body: "Security Scan failed. Please check the logs.",
+                    emailext body: "Security Scan failed. Please check the logs.",
                              subject: "Security Scan Failure",
                              to: "emmagrayy@gmail.com"
                 }
