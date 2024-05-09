@@ -11,14 +11,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Use Maven to build the code
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
                 // Run unit tests
-                sh 'mvn test'
+                bat 'mvn test'
                 
                 // Run integration tests
                 // This step depends on the specific tool you are using for integration tests
