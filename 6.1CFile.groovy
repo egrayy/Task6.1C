@@ -32,12 +32,14 @@ pipeline {
                     emailext body: "Unit and Integration Tests passed successfully.",
                              subject: "Unit and Integration Tests Success",
                              to: "emmagrayy@gmail.com"
+                    attachLog: true
                 }
                 failure {
                     // Send email notification on failure
                     emailext body: "Unit and Integration Tests failed. Please check the logs.",
                              subject: "Unit and Integration Tests Failure",
                              to: "emmagrayy@gmail.com"
+                    attachLog: true
                 }
             }
         }
@@ -64,12 +66,14 @@ pipeline {
                     emailext body: "Security Scan passed successfully.",
                              subject: "Security Scan Success",
                              to: "emmagrayy@gmail.com"
+                    attachLog: true
                 }
                 failure {
                     // Send email notification on failure
                     emailext body: "Security Scan failed. Please check the logs.",
                              subject: "Security Scan Failure",
                              to: "emmagrayy@gmail.com"
+                    attachLog: true
                 }
             }
         }
@@ -108,12 +112,14 @@ pipeline {
             emailext body: "Pipeline executed successfully.",
                      subject: "Pipeline Success",
                      to: "emmagrayy@gmail.com"
+            attachLog: true
         }
         failure {
             // Send email notification on failure
             emailext body: "Pipeline failed. Please check the logs.",
                      subject: "Pipeline Failure",
                      to: "emmagrayy@gmail.com"
+            attachLog: true
         }
     }
 }
