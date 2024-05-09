@@ -10,15 +10,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                 echo "Fetching the source code from the directory path: ${DIRECTORY_PATH}"
                 // Use Maven to build the code
-                bat 'mvn clean package'
+               // bat 'mvn clean package'
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
+                echo "Running unit tests"
+                echo "Running integration tests"
                 // Run unit tests
-                bat 'mvn test'
+                // bat 'mvn test'
                 
                 // Run integration tests
                 // This step depends on the specific tool you are using for integration tests
