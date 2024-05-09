@@ -105,13 +105,13 @@ pipeline {
     post {
         success {
             // Send email notification on success
-            mail to body: "Pipeline executed successfully.",
+            emailext body: "Pipeline executed successfully.",
                      subject: "Pipeline Success",
                      to: "emmagrayy@gmail.com"
         }
         failure {
             // Send email notification on failure
-            mail to body: "Pipeline failed. Please check the logs.",
+            emailext body: "Pipeline failed. Please check the logs.",
                      subject: "Pipeline Failure",
                      to: "emmagrayy@gmail.com"
         }
