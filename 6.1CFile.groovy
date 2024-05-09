@@ -41,6 +41,7 @@ pipeline {
 
         stage('Code Analysis') {
             steps {
+                echo "Checking the quality of the code"
                 // Integrate code analysis tool (e.g., SonarQube)
                 // This step depends on the specific tool you are using for code analysis
                 // Placeholder: Implement code analysis tool integration here
@@ -49,6 +50,7 @@ pipeline {
 
         stage('Security Scan') {
             steps {
+                echo "Performing security scan"
                 // Perform security scan (e.g., using OWASP ZAP)
                 // This step depends on the specific tool you are using for security scanning
                 // Placeholder: Implement security scanning tool integration here
@@ -71,6 +73,7 @@ pipeline {
 
         stage('Deploy to Staging') {
             steps {
+                echo "Deploying the application to a testing environment specified by: ${TESTING_ENVIRONMENT}"
                 // Deploy application to staging server (e.g., AWS EC2 instance)
                 // This step depends on your deployment process (e.g., using AWS CLI)
                 // Placeholder: Implement deployment to staging here
@@ -79,6 +82,7 @@ pipeline {
 
         stage('Integration Tests on Staging') {
             steps {
+                echo "Running integration tests on staging"
                 // Run integration tests on the staging environment
                 // This step depends on the specific tool you are using for integration tests
                 // Placeholder: Implement integration tests on staging here
@@ -87,6 +91,7 @@ pipeline {
 
         stage('Deploy to Production') {
             steps {
+                echo "Deploying the code to the production environment: ${PRODUCTION_ENVIRONMENT}"
                 // Deploy application to production server (e.g., AWS EC2 instance)
                 // This step depends on your deployment process (e.g., using AWS CLI)
                 // Placeholder: Implement deployment to production here
